@@ -1,0 +1,13 @@
+ui_print("********************************");
+ui_print("Скрипт для удаления последнего модуля");
+ui_print("********************************");
+
+ui_print("Монтирую /data...");
+run_program("/sbin/mount", "/data");
+
+ui_print("Работа скрипта");
+run_program("/sbin/sh", "/tmp/common/revert_script.sh");
+
+ui_print("Rebooting in 5 seconds...");
+run_program("/sbin/sleep", "5");
+run_program("/sbin/reboot");
